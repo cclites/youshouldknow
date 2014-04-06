@@ -17,7 +17,6 @@ ClassLoader::addDirectories(array(
 	app_path().'/controllers',
 	app_path().'/models',
 	app_path().'/database/seeds',
-
 ));
 
 /*
@@ -79,3 +78,10 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+
+/*
+ * Custom includes. Why do these not get picked up.
+ */
+require public_path().'/Init.php';
+require app_path().'/controllers/Comms.php';

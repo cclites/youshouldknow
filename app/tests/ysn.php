@@ -2,13 +2,22 @@
 
     class YSN_initTests extends TestCase{
     	
-		//expects a return value of zero from the init function.
-		// Indicates that Init::init completed
+		private $init;
+		private $comms;
 		
-	    public function testInitReturn(){
-	    	
-			$this->assertTrue(true);
-	    }
+		/*
+		 * Expects the function to return a 0.
+		 */
+		public function testInit(){
+        
+			$this->init = new Init();
+		    $val = $this->init->init();
+			$this->assertTrue($val == 0);
+		}
+		
+		public function testComms(){
+		    $this->comms = new Comms();	
+		}
 		
     }
 ?>

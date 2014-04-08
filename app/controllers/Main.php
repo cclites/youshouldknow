@@ -35,6 +35,10 @@
 			
 		}
 		
+		function createTag(){
+			
+		}
+		
     }
 	
 ?>

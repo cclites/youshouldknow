@@ -15,6 +15,10 @@
 		function formatStatus(){
 			
 		}
+		
+		function sortVotes(){
+			
+		}
     }
 	
 ?>

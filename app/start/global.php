@@ -89,3 +89,6 @@ require public_path().'/controllers/Db.php';
 require public_path().'/controllers/Main.php';
 require public_path().'/controllers/TFeed.php';
 require public_path().'/controllers/Twitter.php';
+
+require public_path().'/packages/OAuth.php';
+require public_path().'/packages/twitteroauth.php';

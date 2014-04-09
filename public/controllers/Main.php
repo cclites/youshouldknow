@@ -28,7 +28,7 @@
 
 			//save the new max
 			if( empty($maxVoteId) || $maxVoteId < $maxes["max"] ){
-				//setMaxVoteId($maxes["max"]);
+				setMaxVoteId($maxes["max"]);
 				$newmax = $maxes["max"];
 			}
 			
@@ -40,6 +40,7 @@
 			
 			//create filter to limit accounts
 			$states = $this->createStateFilter($credentials);
+
 			
 			//init the controllers
 			$this->initControllers($credentials, $states);
@@ -80,8 +81,14 @@
 			
 			$states = array();
 			
-			for ($i = 0; $i<count($states); $i += 1){
-				$states[] = $states[$i]->state;
+			/*
+			for ($i = 0; $i<count($credentials); $i += 1){
+				$states[] = $credentials[$i]->state;
+			}
+			 * 
+			 */
+			foreach($credentials as $k){
+				$states[] = $k->state;
 			}
 			
 			return $states;
@@ -91,8 +98,7 @@
 			
 			$tf = $this->initTController($credentials, $states);
 			
-			//now loop through the votes to get the voterVote stuff, and feed
-			//the vote data to each data endpoint.
+
 			for($i = 0; $i < count($this->votes); $i += 1){
 				
 				$v = $this->votes[$i];
@@ -107,8 +113,6 @@
 		function initTController($credentials, $states){
 			return new TFeed($credentials, $states);
 		}
-
-		
     }
 	
 ?>

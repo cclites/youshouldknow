@@ -72,7 +72,7 @@
 		function formatStatus($params, $person, $pVote){
 			
 			return $person->name . " votes " . $pVote . " on " . $params["billId"] .
-			       "; " . $params["result"] . " " . $params["type"] . "" . $params["plus"] . "-" . $params["minus"];
+			       "; " . $params["result"] . " " . $params["type"] . " " . $params["plus"] . "-" . $params["minus"];
 			
 		}
 		

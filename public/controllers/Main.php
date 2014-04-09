@@ -31,7 +31,7 @@
 				setMaxVoteId($maxes["max"]);
 				$newmax = $maxes["max"];
 			}
-			
+
 			//Remove stale data from the array.
 			$this->votes = $this->cleanModel($newMax);
 			

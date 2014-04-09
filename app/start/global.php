@@ -81,29 +81,11 @@ require app_path().'/filters.php';
 
 
 /*
- * Custom includes. Why do these not get picked up?
- */
-
-
-//THese should autoload, but I do not believe that they are.
-
-
-/*
-require public_path().'/Init.php';
-require app_path().'/controllers/Main.php';
-require app_path().'/controllers/GovTrack.php';
-require app_path().'/controllers/Db.php';
-require app_path().'/controllers/Main.php';
-require app_path().'/controllers/TFeed.php';
-require app_path().'/controllers/Twitter.php';
+* Custom includes. Why do these not get picked up?
 */
-
-/*
-"app/tests/govtracktests.php",
-			"app/tests/maintests.php",
-			"app/tests/dbtests.php",
-			"app/controllers/DB.php",
-			"app/controllers/Main.php",
-			"app/controllers/TFeed.php",
-			"app/controllers/Twitter.php"
- */
+require public_path().'/Init.php';
+require public_path().'/controllers/GovTrack.php';
+require public_path().'/controllers/Db.php';
+require public_path().'/controllers/Main.php';
+require public_path().'/controllers/TFeed.php';
+require public_path().'/controllers/Twitter.php';

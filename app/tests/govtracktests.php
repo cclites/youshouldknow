@@ -11,7 +11,7 @@
 		    $this->assertNotNull( $bills, "FAILURE: Get votes is returning null." );
 			$this->assertNotEmpty( $bills, "FAILURE: Get Bills is empty.");
 		}
-		
+	
 		
 		//this needs an id to work with eventually.
 		public function testGetVoterVotes(){

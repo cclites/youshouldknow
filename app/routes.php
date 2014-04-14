@@ -20,3 +20,23 @@ Route::get('daemon', function(){
 	$init = new Init();
 	$init->init();
 });
+
+/*
+Route::get('/', function()
+{
+    $callback = url('twitter/callback');
+    return Twitter::authorize($callback);
+});
+
+Route::get('callback', function()
+{
+    $callback = Twitter::getCallback();
+
+    if($callback == 200)
+    {
+        return Redirect::to('share')->withFlashSuccess('Your twitter is connected.');
+    }
+    return Redirect::to('/')->withFlashError('Connecting failed.');
+});
+ * 
+ */

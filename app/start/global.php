@@ -90,5 +90,5 @@ require public_path().'/controllers/Main.php';
 require public_path().'/controllers/TFeed.php';
 require public_path().'/controllers/Twitter.php';
 
-require public_path().'/packages/OAuth.php';
-require public_path().'/packages/twitteroauth.php';
+require public_path().'/packages/twitteroauth/twitteroauth/OAuth.php';
+require public_path().'/packages/twitteroauth/twitteroauth/twitteroauth.php';

@@ -20,7 +20,7 @@
 		// object. Since the info will need to be reused with each status update,
 		// I am stufing the parameters needed for creating the update into a single
 		// object. The voter info will be added later.
-		function updateStatus($vote){
+		function updateStatus($vote, $link){
 			
 			$result = $vote->objects[0];
 			$billIdStr = $this->formatBillId($result->vote->chamber_label, 
@@ -53,26 +53,38 @@
 									
 				$v = $votes[$i];
 				
-
+                //echo "<pre>";
+			    //print_r($v);
+			    //echo "</pre><br>";
+			    //die();
 				
 				$state = $this->getState($v->person->name);
 				
 				if(in_array($state, $this->states)){
 					
-					$status = $this->formatStatus($params, $v->person, $v->option->value);
-					$this->tHandle->postStatus($state, $status);
+					$status = $this->formatStatus($params, $v->person, $v->option->value, $link);
+					
+					echo "$status<br>";
+					//$this->tHandle->postStatus($state, $status);
+					//die();
 				}
 				else{
-					
+					//debug message
 				}
 			}
 	
 		}
 		
-		function formatStatus($params, $person, $pVote){
+		function formatStatus($params, $person, $pVote, $link){
 			
-			return $person->name . " votes " . $pVote . " on " . $params["billId"] .
-			       "; " . $params["result"] . " " . $params["type"] . " " . $params["plus"] . "-" . $params["minus"];
+			
+			/*
+			return $person->name . " " . $pVote . " on " . $params["billId"] .
+			       "; Vote Result: " . $params["result"] . /*" " . $params["type"] . " " . $params["plus"] . "-" . 
+			       $params["minus"] . "  " . $link;  */
+			       
+			return $person->name . " " . $pVote . " " . $params["type"] .
+			       "; " . $params["result"] . " " . $link;       
 			
 		}
 		

@@ -21,6 +21,15 @@ Route::get('daemon', function(){
 	$init->init();
 });
 
+
+Route::get('vote/{voteId}', 'ViewController@init');
+/*
+Route::get('vote/{voteId}', function($voteId){
+	//how to grab a parameter. args[0]?
+	echo "Vote id is $voteId<br>";
+});
+ */
+
 /*
 Route::get('/', function()
 {

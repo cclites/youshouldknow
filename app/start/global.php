@@ -80,15 +80,23 @@ App::down(function()
 require app_path().'/filters.php';
 
 
-/*
-* Custom includes. Why do these not get picked up?
-*/
-require public_path().'/Init.php';
-require public_path().'/controllers/GovTrack.php';
-require public_path().'/controllers/Db.php';
-require public_path().'/controllers/Main.php';
-require public_path().'/controllers/TFeed.php';
-require public_path().'/controllers/Twitter.php';
+// Controllers need to be moved to the correct (app) location, now that I understand
+// how to route to them correctly.
 
+/*
+ * Deamon
+ */
+require public_path().'/Init.php';
+require public_path().'/controllers/daemon/Main.php';
+require public_path().'/controllers/daemon/TFeed.php';
+require public_path().'/controllers/daemon/Twitter.php';
+/*
+ * Shared
+ */
+require public_path().'/controllers/shared/GovTrack.php';
+require public_path().'/controllers/shared/Db.php';
+/*
+ * Twitter
+ */
 require public_path().'/packages/twitteroauth/twitteroauth/OAuth.php';
 require public_path().'/packages/twitteroauth/twitteroauth/twitteroauth.php';

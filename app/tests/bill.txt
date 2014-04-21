@@ -1,0 +1,117 @@
+{
+ "bill_resolution_type": "resolution", 
+ "bill_type": "house_concurrent_resolution", 
+ "bill_type_label": "H.Con.Res.", 
+ "committees": [
+  {
+   "abbrev": "Budget", 
+   "code": "HSBU", 
+   "committee": null, 
+   "committee_type": "house", 
+   "committee_type_label": "House", 
+   "id": 2696, 
+   "name": "House Committee on the Budget", 
+   "obsolete": false, 
+   "url": "http://budget.house.gov/"
+  }, 
+  {
+   "abbrev": "Budget", 
+   "code": "SSBU", 
+   "committee": null, 
+   "committee_type": "senate", 
+   "committee_type_label": "Senate", 
+   "id": 2649, 
+   "name": "Senate Committee on the Budget", 
+   "obsolete": false, 
+   "url": "http://budget.senate.gov/"
+  }
+ ], 
+ "congress": 113, 
+ "cosponsors": [], 
+ "current_status": "pass_over_house", 
+ "current_status_date": "2014-04-10", 
+ "current_status_description": "This resolution passed in the House on April 10, 2014 and goes to the Senate next for consideration.", 
+ "current_status_label": "Passed House", 
+ "display_number": "H.Con.Res. 96", 
+ "docs_house_gov_postdate": "2014-04-03T15:33:24", 
+ "id": 332513, 
+ "introduced_date": "2014-04-04", 
+ "is_alive": true, 
+ "is_current": true, 
+ "link": "https://www.govtrack.us/congress/bills/113/hconres96", 
+ "major_actions": [
+  [
+   "datetime.datetime(2014, 4, 4, 16, 36)", 
+   3, 
+   "Placed on the Union Calendar, Calendar No. 297.", 
+   "<calendar datetime=\"2014-04-04T16:36:00-04:00\" state=\"REPORTED\" calendar=\"Union\" number=\"297\">\n      <text>Placed on the Union Calendar, Calendar No. 297.</text>\n    </calendar>\n    "
+  ], 
+  [
+   "datetime.datetime(2014, 4, 10, 12, 2)", 
+   4, 
+   "On agreeing to the resolution Agreed to by the Yeas and Nays: 219 - 205 (Roll no. 177).", 
+   "<vote how=\"roll\" type=\"vote\" roll=\"177\" datetime=\"2014-04-10T12:02:00-04:00\" where=\"h\" result=\"pass\" state=\"PASS_OVER:HOUSE\">\n      <text>On agreeing to the resolution Agreed to by the Yeas and Nays: 219 - 205 (Roll no. 177).</text>\n    </vote>\n    "
+  ]
+ ], 
+ "noun": "resolution", 
+ "number": 96, 
+ "senate_floor_schedule_postdate": null, 
+ "sliplawnum": null, 
+ "sliplawpubpriv": null, 
+ "source": "thomas-congproj", 
+ "source_link": null, 
+ "sponsor": {
+  "bioguideid": "R000570", 
+  "birthday": "1970-01-29", 
+  "cspanid": 57970, 
+  "firstname": "Paul", 
+  "gender": "male", 
+  "gender_label": "Male", 
+  "id": 400351, 
+  "lastname": "Ryan", 
+  "link": "https://www.govtrack.us/congress/members/paul_ryan/400351", 
+  "middlename": "D.", 
+  "name": "Rep. Paul Ryan [R-WI1]", 
+  "namemod": "", 
+  "nickname": "", 
+  "osid": "N00004357", 
+  "pvsid": "26344", 
+  "sortname": "Ryan, Paul (Rep.) [R-WI1]", 
+  "twitterid": "RepPaulRyan", 
+  "youtubeid": "reppaulryan"
+ }, 
+ "sponsor_role": {
+  "congress_numbers": [
+   113
+  ], 
+  "current": true, 
+  "description": "Representative for Wisconsin's 1st congressional district", 
+  "district": 1, 
+  "enddate": "2015-01-03", 
+  "id": 42827, 
+  "leadership_title": null, 
+  "party": "Republican", 
+  "person": 400351, 
+  "phone": "202-225-3031", 
+  "role_type": "representative", 
+  "role_type_label": "Representative", 
+  "senator_class": null, 
+  "senator_rank": null, 
+  "startdate": "2013-01-03", 
+  "state": "WI", 
+  "title": "Rep.", 
+  "title_long": "Representative", 
+  "website": "http://paulryan.house.gov"
+ }, 
+ "terms": [], 
+ "thomas_link": "http://thomas.loc.gov/cgi-bin/bdquery/z?d113:hconres96:", 
+ "title": "H.Con.Res. 96: Establishing the budget for the United States Government for fiscal year 2015 and setting forth appropriate budgetary levels for fiscal years 2016 through 2024.", 
+ "title_without_number": "Establishing the budget for the United States Government for fiscal year 2015 and setting forth appropriate budgetary levels for fiscal years 2016 through 2024.", 
+ "titles": [
+  [
+   "official", 
+   "introduced", 
+   "Establishing the budget for the United States Government for fiscal year 2015 and setting forth appropriate budgetary levels for fiscal years 2016 through 2024."
+  ]
+ ]
+}

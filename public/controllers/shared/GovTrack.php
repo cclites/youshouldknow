@@ -13,9 +13,10 @@
 		 * Get votes held on the previous day.
 		 */
         function getVotes(){
-			$day = date('d') - 6;
+			$day = date('d') - 8;
 			$date = date("Y-m") . "-$day";
-			$url = "https://www.govtrack.us/api/v2/vote?created__gt=$date&fields=chamber,id,bill,congress";
+			//$url = "https://www.govtrack.us/api/v2/vote?created__gt=$date&fields=chamber,id,bill,congress,related_bill";
+			$url = "https://www.govtrack.us/api/v2/vote?created__gt=$date";
             return json_decode(file_get_contents($url));
         }
 		
@@ -24,6 +25,11 @@
 		 */
 		function getVoterVotes($id){
 			$url = "https://www.govtrack.us/api/v2/vote_voter?vote=$id";
+			return json_decode(file_get_contents($url));
+		}
+		
+		function getBill($billId){
+			$url = "https://www.govtrack.us/api/v2/bill/" . $billId . "/text";
 			return json_decode(file_get_contents($url));
 		}
     }

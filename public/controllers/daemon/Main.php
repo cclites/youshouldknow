@@ -32,9 +32,9 @@
 				$newmax = $maxes["max"];
 			}
 			
-
+            //debug
 			//Remove stale data from the array.
-			$this->votes = $this->cleanModel($newMax);
+			//$this->votes = $this->cleanModel($newMax);
 			
 			//get the app credentials.
 			$credentials = getUserCredentials();
@@ -82,12 +82,6 @@
 			
 			$states = array();
 			
-			/*
-			for ($i = 0; $i<count($credentials); $i += 1){
-				$states[] = $credentials[$i]->state;
-			}
-			 * 
-			 */
 			foreach($credentials as $k){
 				$states[] = $k->state;
 			}
@@ -99,14 +93,52 @@
 			
 			$tf = $this->initTController($credentials, $states);
 			
+			//echo "<pre>";
+			//print_r($this->votes);
+			//exit;
+			
 
 			for($i = 0; $i < count($this->votes); $i += 1){
 				
 				$v = $this->votes[$i];
 				
+				//echo "<pre>";
+			    //print_r($v);
+			    //exit;
+				
+				
+				$billId = $v->related_bill->id;
+				
+				//The following link pulls back the raw data. 
+				//$link = "https://www.govtrack.us/api/v2/bill/" . $billId;
+				
+				//For now, I need to include the current govtrack link 
+				//to pull up the related data.
+				// ** Not the right way **
+				//$link = $v->related_bill->link;
+				
+				$tLink = $this->gt->getBill($billId);
+				echo "<br><pre>";
+				print_r($tLink);
+				exit;
+				
+				//This links to the info related to the vote. From there,
+				//The user can go on to the actual bill/amendment text
+				$link = $v->link;
+				
+				//Once server is up, I will need to post the vote id 
+				//back with the link url.
+				
+				
+			    
 				//need to get voter vote stuff for each id
 				$vote = $this->gt->getVoterVotes($v->id);
-				$tf->updateStatus($vote);
+				
+				//echo "<pre>";
+			    //print_r($vote);
+			    //exit;
+				
+				$tf->updateStatus($vote, $link);
 			}
 			
 		}

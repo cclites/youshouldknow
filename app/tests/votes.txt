@@ -1,0 +1,59 @@
+stdClass Object
+(
+    [meta] => stdClass Object
+        (
+            [limit] => 100
+            [offset] => 0
+            [total_count] => 5
+        )
+
+    [objects] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [chamber] => house
+                    [chamber_label] => House
+                    [congress] => 113
+                    [id] => 114335
+                    [link] => https://www.govtrack.us/congress/votes/113-2014/h175
+                )
+
+            [1] => stdClass Object
+                (
+                    [chamber] => senate
+                    [chamber_label] => Senate
+                    [congress] => 113
+                    [id] => 114333
+                    [link] => https://www.govtrack.us/congress/votes/113-2014/s106
+                )
+
+            [2] => stdClass Object
+                (
+                    [chamber] => house
+                    [chamber_label] => House
+                    [congress] => 113
+                    [id] => 114336
+                    [link] => https://www.govtrack.us/congress/votes/113-2014/h176
+                )
+
+            [3] => stdClass Object
+                (
+                    [chamber] => house
+                    [chamber_label] => House
+                    [congress] => 113
+                    [id] => 114334
+                    [link] => https://www.govtrack.us/congress/votes/113-2014/h177
+                )
+
+            [4] => stdClass Object
+                (
+                    [chamber] => senate
+                    [chamber_label] => Senate
+                    [congress] => 113
+                    [id] => 114337
+                    [link] => https://www.govtrack.us/congress/votes/113-2014/s107
+                )
+
+        )
+
+)

@@ -16,10 +16,14 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::get('daemon', 'Init@init');
+
+/*
 Route::get('daemon', function(){
 	$init = new Init();
 	$init->init();
 });
+*/
 
 
 Route::get('vote/{voteId}', 'ViewController@init');

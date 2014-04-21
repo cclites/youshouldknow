@@ -86,15 +86,14 @@ require app_path().'/filters.php';
 /*
  * Deamon
  */
-require public_path().'/Init.php';
-require public_path().'/controllers/daemon/Main.php';
-require public_path().'/controllers/daemon/TFeed.php';
-require public_path().'/controllers/daemon/Twitter.php';
+require app_path().'/controllers/daemon/Main.php';
+require app_path().'/controllers/daemon/TFeed.php';
+require app_path().'/controllers/daemon/Twitter.php';
 /*
  * Shared
  */
-require public_path().'/controllers/shared/GovTrack.php';
-require public_path().'/controllers/shared/Db.php';
+require app_path().'/controllers/shared/GovTrack.php';
+require app_path().'/controllers/shared/Db.php';
 /*
  * Twitter
  */

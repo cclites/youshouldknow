@@ -1,1 +1,1 @@
-<div>{{ $model->link }}</div>
+<div><button value="Bill Info from GovTrack.org"></button>{{ $model->link }}</div>

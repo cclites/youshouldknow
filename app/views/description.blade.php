@@ -1,0 +1,1 @@
+<div class='voteDescription'>{{$model->current_status_description}}</div>

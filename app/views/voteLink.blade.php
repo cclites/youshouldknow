@@ -1,1 +1,1 @@
-<div><button value="Bill Info from GovTrack.org"></button>{{ $model->link }}</div>
+<button data-bind="{{ $model->link }}">Bill Info from GovTrack.org</button>

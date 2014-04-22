@@ -11,45 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-
 Route::get('daemon', 'Init@init');
 
-/*
-Route::get('daemon', function(){
-	$init = new Init();
-	$init->init();
-});
-*/
-
-
 Route::get('vote/{voteId}', 'ViewController@init');
-/*
-Route::get('vote/{voteId}', function($voteId){
-	//how to grab a parameter. args[0]?
-	echo "Vote id is $voteId<br>";
-});
- */
 
-/*
-Route::get('/', function()
-{
-    $callback = url('twitter/callback');
-    return Twitter::authorize($callback);
-});
-
-Route::get('callback', function()
-{
-    $callback = Twitter::getCallback();
-
-    if($callback == 200)
-    {
-        return Redirect::to('share')->withFlashSuccess('Your twitter is connected.');
-    }
-    return Redirect::to('/')->withFlashError('Connecting failed.');
-});
- * 
- */

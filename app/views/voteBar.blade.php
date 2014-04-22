@@ -3,6 +3,7 @@
 	<div>
 		@include('description')
 		@include('sponsor')
-		@include('voteLink')
 	</div>
+	  <br>
+	@include('voteLink')
 </div>

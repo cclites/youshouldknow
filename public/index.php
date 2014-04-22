@@ -34,6 +34,11 @@ require __DIR__.'/../bootstrap/autoload.php';
 
 $app = require_once __DIR__.'/../bootstrap/start.php';
 
+//Do some less
+$less = new lessc;
+$less->compileFile('less/ushouldknow.less', 'css/ushouldknow.css');
+
+
 /*
 |--------------------------------------------------------------------------
 | Run The Application

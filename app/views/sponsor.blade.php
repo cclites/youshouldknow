@@ -1,1 +1,1 @@
-<div class='sponsor'>Sponsor: {{ $model->sponsor->name }}</div>
+<div class='voteSponsor'>Sponsor: {{ $model->sponsor->name }}</div>

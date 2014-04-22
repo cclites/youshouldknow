@@ -6,6 +6,7 @@
 		
 		{{ HTML::style('css/bootstrap.min.css') }}
 		{{ HTML::style('css/ushouldknow.css') }}
+		
 	</head>
 	<body>
 		
@@ -16,6 +17,8 @@
 	{{ HTML::script('js/jquery.js') }}
 	{{ HTML::script('js/jquery_ui.js') }}
 	{{ HTML::script('js/bootstrap.min.js') }}
+	{{ HTML::script('js/less.js') }}
+	{{ HTML::script('js/view_controller.js') }}
 	
 	</body>
 </html>

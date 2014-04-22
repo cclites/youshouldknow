@@ -17,6 +17,9 @@
 			$date = date("Y-m") . "-$day";
 			//$url = "https://www.govtrack.us/api/v2/vote?created__gt=$date&fields=chamber,id,bill,congress,related_bill";
 			$url = "https://www.govtrack.us/api/v2/vote?created__gt=$date";
+			
+			echo "$url";
+			die();
             return json_decode(file_get_contents($url));
         }
 		

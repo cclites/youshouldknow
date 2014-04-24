@@ -10,15 +10,18 @@
 	</head>
 	<body>
 		
+		@include('header')
+		
 		<div class="container">
 			@include('voteBar')
 		</div>
 		
-	{{ HTML::script('js/jquery.js') }}
-	{{ HTML::script('js/jquery_ui.js') }}
-	{{ HTML::script('js/bootstrap.min.js') }}
-	{{ HTML::script('js/less.js') }}
-	{{ HTML::script('js/view_controller.js') }}
+	    {{ HTML::script('js/jquery.js') }}
+	    {{ HTML::script('js/jquery_ui.js') }}
+	    {{ HTML::script('js/bootstrap.min.js') }}
+	    {{ HTML::script('js/less.js') }}
+	    {{ HTML::script('js/view_controller.js') }}
+	    {{ HTML::script('js/custom_tags.js') }}
 	
 	</body>
 </html>

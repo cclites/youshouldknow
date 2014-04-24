@@ -1,9 +1,9 @@
 <div class="voteBar">
 	@include('title')
-	<div>
+	<ul>
 		@include('description')
 		@include('sponsor')
-	</div>
+	</ul>
 	  <br>
 	@include('voteLink')
 </div>

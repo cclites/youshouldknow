@@ -1,1 +1,1 @@
-<div class='voteDescription'>{{$model->current_status_description}}</div>
+<li class='voteDescription'><icon-before class="vote glyphicon glyphicon-plus"></icon-before>{{$model->current_status_description}}</li>

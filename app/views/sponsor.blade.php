@@ -1,1 +1,1 @@
-<div class='voteSponsor'>Sponsor: {{ $model->sponsor->name }}</div>
+<li class='voteSponsor'><icon-before class="glyphicon glyphicon-plus"></icon-before>Sponsor: {{ $model->sponsor->name }}</li>

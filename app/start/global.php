@@ -79,10 +79,6 @@ App::down(function()
 
 require app_path().'/filters.php';
 
-
-// Controllers need to be moved to the correct (app) location, now that I understand
-// how to route to them correctly.
-
 /*
  * Deamon
  */
@@ -94,6 +90,7 @@ require app_path().'/controllers/daemon/Twitter.php';
  */
 require app_path().'/controllers/shared/GovTrack.php';
 require app_path().'/controllers/shared/Db.php';
+require app_path().'/config/ysk.php';
 /*
  * Twitter
  */

@@ -1,3 +1,3 @@
 <header class="container">
-	<div><font>USK</font></div>
+	<div><font>You Should Know</font><font>Congressional voting data at your fingertips!</font></div>
 </header>

@@ -4,6 +4,8 @@
 		<title>uShouldKnow.us</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
+		<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC|Belgrano|Kameron' rel='stylesheet' type='text/css'>
+		
 		{{ HTML::style('css/bootstrap.min.css') }}
 		{{ HTML::style('css/ushouldknow.css') }}
 		

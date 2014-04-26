@@ -1,1 +1,1 @@
-<li class='voteDescription'><icon-before class="vote glyphicon glyphicon-plus"></icon-before>{{$model->current_status_description}}</li>
+<li class='voteDescription'><icon-before class="vote glyphicon glyphicon-plus btn-sm"></icon-before>{{$model->current_status_description}}</li>

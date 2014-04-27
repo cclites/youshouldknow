@@ -13,7 +13,7 @@
 		$gt = new GovTrack();
 		$billModel = $gt->getBill($billId);
 		echo View::make("main")->with('model', $billModel);
-
+		
 	}
   }
 

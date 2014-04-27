@@ -26,6 +26,14 @@
 		
 	}
 	
+	/*
+	 * This function is used to grab a list of active states for the
+	 * state selection dropdown in the admin section.
+	 */
+	function getStates(){
+		return DB::table('account')->pluck('state');
+	}
+	
 	function getAppCredentials(){
 		$consumerKey = DB::table('system')->where('name', 'yskconsumerkey')->pluck('value');
 		$consumerSecret = DB::table('system')->where('name', 'yskconsumersecret')->pluck('value');

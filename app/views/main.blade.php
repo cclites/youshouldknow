@@ -15,7 +15,15 @@
 		@include('header')
 		
 		<div class="container">
-			@include('voteBar')
+			
+			
+			@if( isset($GLOBALS["isadmin"]) )
+			    @include('admin/admin')
+			@else
+			    @include('voteBar/voteBar')		
+			@endif
+			
+			
 		</div>
 		
 	    {{ HTML::script('js/jquery.js') }}

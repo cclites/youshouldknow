@@ -14,15 +14,16 @@
 Route::get('daemon', 'Init@init');
 
 Route::get('vote/{voteId}', 'ViewController@init');
+Route::get('admin/{adminId}', 'AdminController@init');
 
-//test can be an array of tests
+//{test} can be an array of tests
 //valid switchers are [vote, bill]
-Route::get('test/{test}', function($test){
-	
-									define('TEST', $test);
-									
-									$vc = new ViewController();
-									$vc->init(0);
-                                }
-          );
+Route::get('test/{test}', 
+            function($test){
+				define('TEST', $test);
+				$vc = new ViewController();
+				$vc->init(0);
+            });
+		  
+
 

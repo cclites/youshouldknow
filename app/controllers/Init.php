@@ -13,10 +13,12 @@
 			$gt = new GovTrack();
 			$votes = $gt->getVotes();
 			
+			/*
 			echo "<pre>";
 			print_r($votes);
-			die();
-			
+			echo "</pre>";
+			die("Died in Init@init");
+			 */
 			
 			if( $votes->meta->total_count > 0){
 				$main = new Main($votes, $gt);

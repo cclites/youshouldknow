@@ -65,7 +65,7 @@
 					$status = $this->formatStatus($params, $v->person, $v->option->value, $link);
 					
 					echo "$status<br>";
-					//$this->tHandle->postStatus($state, $status);
+					$this->tHandle->postStatus($state, $status);
 					//die();
 				}
 				else{

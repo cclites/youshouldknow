@@ -92,6 +92,10 @@ require app_path().'/controllers/shared/GovTrack.php';
 require app_path().'/controllers/shared/Db.php';
 require app_path().'/config/ysk.php';
 /*
+ * Helpers
+ */
+require app_path().'/controllers/helpers/voterVoteHelper.php';
+/*
  * Twitter
  */
 require public_path().'/packages/twitteroauth/twitteroauth/OAuth.php';

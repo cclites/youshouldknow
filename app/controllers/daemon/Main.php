@@ -4,6 +4,22 @@
 	 * Main controller that contains logic for cleaning and retrieving
 	 * vote data, creating a filter that limits submissions by state,
 	 * and inits the data endpoints.
+	 * 
+	 * This class gets instantiated with a vote object:
+	 * [objects] => Array
+     *   (
+     *       [0] => stdClass Object
+     *           (
+     *               [chamber] => house
+     *               [chamber_label] => House
+     *               [congress] => 113
+     *               [id] => 114335
+     *               [link] => https://www.govtrack.us/congress/votes/113-2014/h175
+     *           )
+     *
+     *       [1] => stdClass Object
+	 * 
+	 * Also takes a GovTrack object as a parameter.
 	 */
 
     class Main{
@@ -41,7 +57,6 @@
 			
 			//create filter to limit accounts
 			$states = $this->createStateFilter($credentials);
-
 			
 			//init the controllers
 			$this->initControllers($credentials, $states);
@@ -93,58 +108,96 @@
 			
 			$tf = $this->initTController($credentials, $states);
 			
+			
 			//echo "<pre>";
 			//print_r($this->votes);
 			//exit;
 			
+			
 
 			for($i = 0; $i < count($this->votes); $i += 1){
 				
+				//Get related bill informtion for archival
+				$billId = 0;
+				$bill = null;
+				
+				//It is possible that there is no associated bill
+				if( is_object($this->votes[$i]->related_bill)){
+					$billId = $this->votes[$i]->related_bill->id;
+					$bill = $this->gt->getBill($billId);
+				}
+				
 				$v = $this->votes[$i];
-				
-				//echo "<pre>";
-			    //print_r($v);
-			    //exit;
-				
-				
-				$billId = $v->related_bill->id;
-				
-				//The following link pulls back the raw data. 
-				//$link = "https://www.govtrack.us/api/v2/bill/" . $billId;
-				
-				//For now, I need to include the current govtrack link 
-				//to pull up the related data.
-				// ** Not the right way **
-				//$link = $v->related_bill->link;
-				
-				$tLink = $this->gt->getBill($billId);
-				echo "<br><pre>";
-				print_r($tLink);
-				exit;
-				
-				//This links to the info related to the vote. From there,
-				//The user can go on to the actual bill/amendment text
-				$link = $v->link;
-				
-				//Once server is up, I will need to post the vote id 
-				//back with the link url.
-				
-				
-			    
+
 				//need to get voter vote stuff for each id
 				$vote = $this->gt->getVoterVotes($v->id);
+			    $this->updateObjectTables($vote, $v->id, $bill, $billId);
 				
-				//echo "<pre>";
-			    //print_r($vote);
-			    //exit;
 				
+				/*
+				 * TODO:
+				 * I need to create a link back to the server that includes
+				 * the voter_vote id.
+				 *
+				 * ie. $link = http://myhost.youshouldknow.us/v/" . $v->id;
+				 * 
+				 */
+				 
+				 //For now, use the link back to govTrack that is contained in the
+				 //vote object.
+				 $link = $v->link;
+				 
 				$tf->updateStatus($vote, $link);
-			}
+				
+			} //end for (this->votes)
 			
 		}
 		
 		function initTController($credentials, $states){
+			
 			return new TFeed($credentials, $states);
+		}
+		
+		function updateObjectTables($vote, $voteId, $bill, $billId){
+				
+			//If the vote id is added, insertObjectIds should return true,
+			//else return false.
+			
+			$return = insertObjectIds($voteId, $billId);
+			
+			//echo "Return is:";
+			//print_r($return);
+			//echo "<br>";
+			//exit;
+			
+			//echo "<pre>";
+			//print_r($vote);
+			
+			if( !$return ){
+				
+				echo "Writing out vote<br>";
+				$myFile = app_path(). "/views/assets/data/vote/$voteId.json";
+				File::put($myFile, json_encode($vote));
+				
+				if($billId != "0" ){
+					echo "Writing out bill<br>";
+					$myFile = app_path(). "/views/assets/data/bill/$billId.json";		
+					File::put($myFile, json_encode($bill));	
+				}
+				
+			}else{
+				echo "HA Ha!<br>";
+			}
+			
+			/*insertVote will be deprecated*/
+			//insertVote($voteId, json_encode($vote));
+			
+			//if($billId != "0" ){
+				
+				/*insertBill will be deprecated*/
+				//insertBill($billId, json_encode($bill));
+			//}
+			
 		}
     }
 	

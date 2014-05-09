@@ -13,8 +13,7 @@
 		 * Get votes held on the previous day.
 		 */
         function getVotes(){
-			$day = date('d') - 1;
-			$date = date("Y-m") . "-$day";
+			$date = date("Y-m-d", strtotime("-1 day"));
 			$url = "https://www.govtrack.us/api/v2/vote?created__gt=$date";
             return json_decode(file_get_contents($url));
         }

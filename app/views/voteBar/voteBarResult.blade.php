@@ -1,8 +1,3 @@
-<?php
-   $results = $_SESSION["model"]["result"];
-   $keys = array_keys($results);
-?>
-
 <table class="table">
 	<tr>
 	    <th>Party</th>
@@ -11,21 +6,20 @@
 	    <th>Not Voting</th>
 	</tr>
 	
-	@foreach ($keys as $key)
+	@foreach ($result as $r=>$v)
 	    <tr>
 	        <td>	
-	  	        {{ $key }}
+	  	        {{ $r }}
 	  	    </td>
 	  	    <td>
-	  	        {{  $results[$key]["Yea"] }}
+	  	       {{ $v['Yea'] }}
 	  	    </td>
 	  	    <td>
-	  	        {{  $results[$key]["Nay"] }}
+	  	    	{{ $v['Nay'] }}
 	  	    </td>
 	  	    <td>
-	  	        {{  $results[$key]["Not Voting"] }}
-	  	    </td>
+	  	    	{{ $v['Not Voting'] }}
+	  	    </td> 
 	    </tr>
-	@endforeach  
-	
+	@endforeach
 </table>

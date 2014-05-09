@@ -1,13 +1,11 @@
-<?php
-    $bill = $_SESSION["model"]["bill"];
-?>
-<div class="voteBar">
+<div class="voteBar container height1">
+	
     @include('voteBar/voteTitle')
-  
+       
     <ul>
         @include('voteBar/voteDescription')
-	    @include('voteBar/VoteBarResult')	
+        @include('voteBar/voteBarResult')
     </ul>
     
-    <button type="button" data-bind="{{$bill->link}}" class="btn-lg">More info from GovTrack.us</button>
+    <button type="button" data-bind="{{$link}}" class="btn-lg">More info from GovTrack.us</button>
 </div>

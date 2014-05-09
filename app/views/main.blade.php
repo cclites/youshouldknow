@@ -3,8 +3,6 @@
 	<head>
 		<title>uShouldKnow.us</title>
 		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
 		<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC|Belgrano|Kameron' rel='stylesheet' type='text/css'>
 		
 		{{ HTML::style('css/bootstrap.min.css') }}
@@ -15,20 +13,14 @@
 		
 		@include('header')
 		
-		<div class="main container height1" data-id="1">
-            
-          
-            @if( isset($GLOBALS["isadmin"]) )
-			    @include('admin/admin')
-			@else
-			    {{ View::make("voteBar/VoteBar")}}
-			@endif
-			
-			@if( $_SESSION["model"]["bill"])
-    	        @include('billBar/billBar')
-            @endif
-         
-		</div>
+		<!--div class="main container height1" data-id="1"-->
+        @include('voteBar/voteBar')
+		<!--/div -->
+		
+		@if( $bill )
+		    @include('billBar/billBar')
+		    @include('sponsorBar/sponsorBar')
+		@endif
 		
 		{{ HTML::script('js/jquery.js') }}
 	    {{ HTML::script('js/jquery_ui.js') }}

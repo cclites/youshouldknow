@@ -99,4 +99,4 @@ require app_path().'/controllers/helpers/voterVoteHelper.php';
  * Twitter
  */
 require public_path().'/packages/twitteroauth/twitteroauth/OAuth.php';
-require public_path().'/packages/twitteroauth/twitteroauth/twitteroauth.php';
+require public_path().'/packages/twitteroauth/twitteroauth/TwitterOAuth.php';

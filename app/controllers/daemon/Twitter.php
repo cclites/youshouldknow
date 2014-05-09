@@ -17,6 +17,10 @@
         }
 		
 		function getConnection($token, $secret){
+			
+			//require_once(public_path() . "/packages/twitteroauth/twitteroauth/TwitterOAuth.php");
+			//require_once(public_path() . "/packages/twitteroauth/twitteroauth/OAuth.php");
+			
 		    return new TwitterOAuth($this->consumerKey, $this->consumerSecret, $token,
                               $secret);	
 		}

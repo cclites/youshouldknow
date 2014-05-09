@@ -28,6 +28,10 @@
 		private $gt;
     	
 		function __construct($votes = array(), $gt) {
+
+            //Needs the appropriate includes. 
+			//require_once(app_path() . "/controllers/shared/Db.php");
+			
 			$this->votes = $votes->objects;
 			$this->gt = $gt;
         }
@@ -50,7 +54,7 @@
 			
             //debug
 			//Remove stale data from the array.
-			//$this->votes = $this->cleanModel($newMax);
+			$this->votes = $this->cleanModel($newMax);
 			
 			//get the app credentials.
 			$credentials = getUserCredentials();

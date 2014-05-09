@@ -19,7 +19,7 @@ html body div.container div.voteBar ul table.table tr th {
 }
 header {
   width: 96%;
-  font-family: 'Kameron', 'serif';
+  font-family: 'Playfair Display SC', 'serif';
 }
 header div {
   padding: 0 6px 0 6px;
@@ -36,7 +36,8 @@ header div font:last-of-type {
   float: right;
   margin-top: 2em;
 }
-html body div.main div.voteBar {
+html body div.main div.voteBar,
+html body div.main div.sponsor {
   border-radius: 8px;
   border: 4px solid #1F3A93;
   background-image: url('../images/blue_flare.png');
@@ -47,7 +48,7 @@ html body div.main div.voteBar {
   height: auto;
   margin-bottom: 12px;
   padding-bottom: 12px;
-  text-shadow: 0px 2px 3px #22313F;
+  text-shadow: 0px 2px 3px #d35400;
 }
 .voteBar h3 {
   padding: 0 20px 12px 20px;
@@ -88,6 +89,8 @@ html body div.main div.voteBar button.btn-lg:hover {
   color: #f2f1ef;
   padding: 0 20px 12px 20px;
   opacity: .9;
+  margin-bottom: 12px;
+  text-shadow: 0px 2px 3px #22313F;
 }
 html body div.main div.bill article button.btn-lg {
   background-image: url('../images/orange_flare.png');
@@ -95,6 +98,17 @@ html body div.main div.bill article button.btn-lg {
 html body div.main div.bill article button.btn-lg:hover {
   background-image: url('../images/blue_flare.png');
 }
-.container {
-  margin-bottom: 20px;
+html body div.main div.sponsor article button.btn-lg {
+  background-image: url('../images/blue_flare.png');
+}
+html body div.main div.sponsor article button.btn-lg:hover {
+  background-image: url('../images/orange_flare.png');
+}
+html body div.main div.sponsor {
+  font-size: 1.5em;
+  padding-left: 20px;
+  font-family: 'Playfair Display SC', 'serif';
+}
+html body div.main div.sponsor article {
+  font-size: .8em;
 }

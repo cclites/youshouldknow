@@ -1,11 +1,8 @@
-<?php
-    $bill = $_SESSION["model"]["bill"];
-?>
-<div class="bill">
+<div class="bill container">
     <h3>Related Information</h3>
     <article >
-	    <span>{{ $bill->title }}</span>
+	    <span>{{ $currentstatus }}</span>
 	    <br><br>
-	    <button type="button" data-bind="{{$bill->thomas_link}}" class="btn-lg">Library of Congress</button>
+	    <button type="button" data-bind="{{$thomas}}" class="btn-lg">Bill Text</button>
     </article>
 </div>

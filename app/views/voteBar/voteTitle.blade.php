@@ -1,1 +1,2 @@
-<h3>{{ $_SESSION["model"]["vote"][0]->vote->question }}</h3>
+<h3>{{ $title }}</h3>
+

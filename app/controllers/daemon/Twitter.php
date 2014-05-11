@@ -30,8 +30,7 @@
 			$connection = $this->getConnection($cc[$state]->access_token, $cc[$state]->access_key);
 			
 			$callback = $connection->post('statuses/update', array('status' => $status) );
-			echo "<br><pre>";
-			print_r($callback);
+
 		}
     }
 	

@@ -147,9 +147,13 @@
 				 * 
 				 */
 				 
+				 $devLink = "http:/216.16.7.62/vote/" . $v->id . "<br>";
+				 //echo $devLink;
+				 $link = $devLink;
+				 
 				 //For now, use the link back to govTrack that is contained in the
 				 //vote object.
-				 $link = $v->link;
+				 //$link = $v->link;
 				 
 				$tf->updateStatus($vote, $link);
 				

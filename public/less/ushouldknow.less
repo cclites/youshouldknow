@@ -43,12 +43,12 @@ icon-before.glyphicon{
 	top: -1px;
 }
 
-html body div.container div.voteBar ul table.table{
+html body div.voteBar ul table.table tbody tr{
 	width: 96.5%;
 	text-align: center;
 }
 
-    html body div.container div.voteBar ul table.table tr th{
+    html body div.voteBar ul table.table tbody tr th{
     	width: 25%;
     	text-align: center;
     }
@@ -95,7 +95,7 @@ html body div.voteBar, html body div.sponsor{
 	background-image: url(@blueflare);
 	color: @votecolor;
 	
-	font-family: @kameron;
+	font-family: @playfair;
 	font-weight: bolder;
 	opacity: .9;
 	height: auto;
@@ -119,8 +119,8 @@ html body div.voteBar, html body div.sponsor{
     	list-style: none;
     }
     
-    .voteBar ul li{   	
-    	font-size: 1.5em;
+    .voteBar ul li, html body div.sponsor article{   	
+    	font-size: 1.2em;
     }
     
     .voteBar ul li:first-of-type{
@@ -206,7 +206,7 @@ html body div.bill article button.btn-lg:hover{
 html body div.voteSponsor{
 	font-size: 1.5em;
 	padding: 15px 0 12px 20px;
-	font-family: @playfair;
+	font-family: @kameron;
 }
 
 

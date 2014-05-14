@@ -14,6 +14,7 @@
 	
 	function init($voteId = 0){
 
+        // These are the defaults for data implemented in the views.
 		$vote = null;
 		$bill = null;
 		$result = array();
@@ -78,7 +79,8 @@
 					  'thomas'=>$thomas,
 					  'sponsorlink'=>$sponsorLink,
 					  'sponsordescription'=>$sponsorDescription,
-					  'bill'=>$bill);
+					  'bill'=>$bill,
+					  'isAdmin'=>false);
 		/*			  
 		echo "<pre>";
 		print_r($data);
@@ -86,7 +88,7 @@
 		 */
 					  
 		try{
-			echo View::make("main", $data);
+			echo View::make("main", $data)->render();
 		}
 		catch(Exception $e){
 			echo "<pre>";

@@ -31,7 +31,7 @@
 	 * state selection dropdown.
 	 */
 	function getStates(){
-		return DB::table('account')->pluck('state');
+		return DB::table('account')->lists('state');
 	}
 	
 	/*
@@ -84,50 +84,5 @@
 		$response = DB::select($query);
         return $response[0]->bill;
 	}
-	
-	//not used
-	function getVote($voteId)
-	{
-		$vote = DB::table('voter_vote')->where('vote_id', $voteId)->pluck('vote');
 		
-		//return $vote->meta;
-		
-		echo "<pre>";
-		print_r($vote);
-		die();
-  		
-		
-		return json_decode($vote);
-	}
-	
-	/*
-	 * Save bill data as text data type.
-	 */
-	//Not used
-	function insertBill($billId, $bill){
-		
-		//See if object exists first.
-		$obj = DB::table('bill')->where('bill_id', '=', $billId)->first();   // this will return NULL if empty
-		
-		if(!$obj){
-			return 1;
-		  //DB::insert('INSERT INTO bill (bill_id, bill) values (?, ?)', array($billId, $bill));
-		}
-		return 0;
-	}
-	
-	//Not used
-	function getBill($voteId){
-		
-		$query = "SELECT b.bill FROM bill AS b, object_ids AS o WHERE o.vote=$voteId AND o.bill=bill_id";
-		
-		$bill = DB::select($query);
-		
-		if($bill){
-			return json_decode($bill[0]->bill);
-		}
-		
-		return null;
-	}
-	
 ?>

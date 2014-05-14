@@ -5,29 +5,40 @@
 		
 		<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC|Belgrano|Kameron' rel='stylesheet' type='text/css'>
 		
-		{{ HTML::style('css/bootstrap.min.css') }}
-		{{ HTML::style('css/ushouldknow.css') }}
+		@include('helpers/cssIncludes')
 		
 	</head>
 	<body>
 		
 		@include('header')
 		
-		<!--div class="main container height1" data-id="1"-->
-        @include('voteBar/voteBar')
-		<!--/div -->
+		@if( isset($result) )
 		
-		@if( $bill )
-		    @include('billBar/billBar')
-		    @include('sponsorBar/sponsorBar')
+            @include('voteBar/voteBar')
+            
+            @if( isset($bill) )
+		        @include('billBar/billBar')
+		        @include('sponsorBar/sponsorBar')
+		    @endif
+		     
+        @elseif( $isAdmin )
+            @include('admin/update')
+        @endif
+        
+		@include('helpers/jsIncludes')
+		
+		@if($isAdmin)
+			<script>
+			    var Model = {
+                        states: ko.mapping.fromJS({{$states}}),
+                        status: ko.observable('Status Update'),
+                        chars: ko.observable(120)
+                    };
+                    
+                ko.applyBindings(Model);
+                
+			</script>
 		@endif
-		
-		{{ HTML::script('js/jquery.js') }}
-	    {{ HTML::script('js/jquery_ui.js') }}
-	    {{ HTML::script('js/bootstrap.min.js') }}
-	    {{ HTML::script('js/less.js') }}
-	    {{ HTML::script('js/view_controller.js') }}
-	    {{ HTML::script('js/custom_tags.js') }}
 		
 	</body>
 </html>

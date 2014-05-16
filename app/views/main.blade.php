@@ -30,9 +30,10 @@
 		@if($isAdmin)
 			<script>
 			    var Model = {
-                        states: ko.mapping.fromJS({{$states}}),
+                        states: ko.mapping.fromJS({{$states}}),  //Not observable, and doesn't need to be
                         status: ko.observable('Status Update'),
-                        chars: ko.observable(120)
+                        chars: ko.observable(120),
+                        chosenStates: ko.observableArray()
                     };
                     
                 ko.applyBindings(Model);

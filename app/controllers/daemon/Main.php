@@ -147,7 +147,7 @@
 				 * 
 				 */
 				 
-				 $devLink = "http:/216.16.7.62/vote/" . $v->id . "<br>";
+				 $devLink = "http:/216.16.7.62/vote/" . $v->id;
 				 //echo $devLink;
 				 $link = $devLink;
 				 
@@ -183,12 +183,12 @@
 			
 			if( !$return ){
 				
-				echo "Writing out vote<br>";
+				echo "Writing out vote\n";
 				$myFile = app_path(). "/views/assets/data/vote/$voteId.json";
 				File::put($myFile, json_encode($vote));
 				
 				if($billId != "0" ){
-					echo "Writing out bill<br>";
+					echo "Writing out bill\n";
 					$myFile = app_path(). "/views/assets/data/bill/$billId.json";		
 					File::put($myFile, json_encode($bill));	
 				}

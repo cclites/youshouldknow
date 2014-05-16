@@ -10,7 +10,7 @@
 		private $tHandle;
 		
 		function __construct($credentials, $states) {
-			$this->credentaisl = $credentials;
+			$this->credentails = $credentials;
 			$this->states = $states;
 			$this->tHandle = new Twitter(  getAppCredentials(), $credentials );
         }
@@ -65,7 +65,7 @@
 					$status = $this->formatStatus($params, $v->person, $v->option->value, $link);
 					
 					//echo "$status<br>";
-					//$this->tHandle->postStatus($state, $status);
+					$this->tHandle->postStatus($state, $status);
 					//die();
 				}
 				else{
@@ -112,8 +112,6 @@
 			$tagPrefix = substr($chamber, 0,1);
 			return $tagPrefix . "." . $number;
 		}
-		
-
     }
 	
 ?>

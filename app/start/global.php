@@ -96,6 +96,10 @@ require app_path().'/config/ysk.php';
  */
 require app_path().'/controllers/helpers/voterVoteHelper.php';
 /*
+ * Updates
+ */
+require app_path().'/controllers/UpdatesController.php';
+/*
  * Twitter
  */
 require public_path().'/packages/twitteroauth/twitteroauth/OAuth.php';

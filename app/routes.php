@@ -12,15 +12,19 @@
 */
 
 //Leave the default
-Route::get('/', function()
-{
+Route::get('/', function(){
 	return View::make('hello');
 });
 
 Route::get('dev', 'ViewController@init');
 Route::get('vote/{voteId}', 'ViewController@init');
 Route::get('admin/{adminId}', 'AdminController@init');
+//Route::post('update/{params}','UpdatesController@init');
 
-		  
+Route::get('update/', function(){
+	$data = Input::all();
+	$uc = new UpdatesController();
+	$uc->manualUpdate($data["chosenStates"], $data["status"]);
+});  
 
 

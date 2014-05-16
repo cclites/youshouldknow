@@ -22,8 +22,18 @@
 			$newMap[$map[$i]->state] = $map[$i];
 		}
 		
-		return $newMap;
+		return $newMap;	
+	}
+	
+	//Won't need. GetUserCredentials
+	function getStateCredentials($state){
+			
+		$map = DB::table('account')
+        ->join('t_configs', 'account.id', '=', 't_configs.user_id')
+        ->where('state', $state )
+        ->get();
 		
+		print_r($map);
 	}
 	
 	/*

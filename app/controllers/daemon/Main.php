@@ -28,21 +28,21 @@
 		private $gt;
     	
 		function __construct($votes = array(), $gt) {
-
-            //Needs the appropriate includes. 
-			//require_once(app_path() . "/controllers/shared/Db.php");
 			
 			$this->votes = $votes->objects;
 			$this->gt = $gt;
         }
 		
 		function init(){
+			
 			$newMax = 0;
 			
 			//get the maxes and mins from my set.
+			Log::info( 'Retrieving maxes.');
 			$maxes = $this->getMaxes();
 
 			//get max id from database.
+			Log::info( 'Get max vote id. ');
 			$maxVoteId = getMaxVoteId();
 			$newMax = $maxVoteId;
 
@@ -52,17 +52,20 @@
 				$newmax = $maxes["max"];
 			}
 			
-            //debug
 			//Remove stale data from the array.
+			Log::info( 'Removing stale data.');
 			$this->votes = $this->cleanModel($newMax);
 			
 			//get the app credentials.
+			Log::info( 'Get user credentials.');
 			$credentials = getUserCredentials();
 			
 			//create filter to limit accounts
+			Log::info( 'Get user credentials.');
 			$states = $this->createStateFilter($credentials);
 			
 			//init the controllers
+			Log::info( 'Initing output controllers.');
 			$this->initControllers($credentials, $states);
 			
 		}
@@ -112,11 +115,7 @@
 			
 			$tf = $this->initTController($credentials, $states);
 			
-			
-			//echo "<pre>";
-			//print_r($this->votes);
-			//exit;
-			
+			$updates = 0;
 			
 
 			for($i = 0; $i < count($this->votes); $i += 1){
@@ -147,17 +146,20 @@
 				 * 
 				 */
 				 
-				 $devLink = "http:/216.16.7.62/vote/" . $v->id;
-				 //echo $devLink;
-				 $link = $devLink;
+				$devLink = "http:/216.16.7.62/vote/" . $v->id;
+				//echo $devLink;
+				$link = $devLink;
 				 
-				 //For now, use the link back to govTrack that is contained in the
-				 //vote object.
-				 //$link = $v->link;
+				//For now, use the link back to govTrack that is contained in the
+				//vote object.
+				//$link = $v->link;
 				 
 				$tf->updateStatus($vote, $link);
+				$updates += 1;
 				
 			} //end for (this->votes)
+			
+			Log::info( 'Total status updates:: ' . $updates);
 			
 		}
 		
@@ -170,42 +172,29 @@
 				
 			//If the vote id is added, insertObjectIds should return true,
 			//else return false.
+			$billCount = 0;
+			$voteCount = 0;
 			
-			$return = insertObjectIds($voteId, $billId);
+			$result = insertObjectIds($voteId, $billId);
 			
-			//echo "Return is:";
-			//print_r($return);
-			//echo "<br>";
-			//exit;
-			
-			//echo "<pre>";
-			//print_r($vote);
-			
-			if( !$return ){
+			if( !$result ){
 				
-				echo "Writing out vote\n";
 				$myFile = app_path(). "/views/assets/data/vote/$voteId.json";
 				File::put($myFile, json_encode($vote));
+				$voteCount += 1;
 				
 				if($billId != "0" ){
-					echo "Writing out bill\n";
 					$myFile = app_path(). "/views/assets/data/bill/$billId.json";		
 					File::put($myFile, json_encode($bill));	
+					$billCOunt += 1;
 				}
 				
 			}else{
-				echo "HA Ha!<br>";
+				Log::error('Failed to update object tables.');
 			}
 			
-			/*insertVote will be deprecated*/
-			//insertVote($voteId, json_encode($vote));
-			
-			//if($billId != "0" ){
-				
-				/*insertBill will be deprecated*/
-				//insertBill($billId, json_encode($bill));
-			//}
-			
+			Log::info( 'Total new vote records:: ' . $voteCount);
+			Log::info( 'Total new bill records:: ' . $billCount);
 		}
     }
 	

@@ -29,6 +29,7 @@
 			$cc = $this->consumerCredentials;
 			$connection = $this->getConnection($cc[$state]->access_token, $cc[$state]->access_key);
 			
+			Log::info('Status update:: $status');
 			$callback = $connection->post('statuses/update', array('status' => $status) );
 			
 			//print_r($callback);

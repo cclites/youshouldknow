@@ -37,9 +37,13 @@ class DaemonCommand extends Command {
 	 */
 	public function fire()
 	{
-		echo "This is some shiznit, innit?\n";
+
+        Log::info( 'Daemon Command start:: ' . date('M-d-y H-i-s') );
+
 		$init = new Init();
 		$init->init();
+		
+		Log::info( 'Daemon Command stop:: ' . date('M-d-y H-i-s') );
 	}
 
 	/**

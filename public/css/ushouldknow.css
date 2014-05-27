@@ -122,3 +122,21 @@ html body div.voteSponsor {
 html body div.main div.sponsor article {
   font-size: .8em;
 }
+html body div.container div#one.col-md-8 textarea {
+  width: 100%;
+  resize: none;
+  font-size: 1.2em;
+  font-family: 'Kameron', 'serif';
+  border-radius: 5px;
+}
+html body div.container div#one.col-md-8 div.counter {
+  position: relative;
+  top: -20px;
+  left: 70%;
+}
+html body div.container div#one.col-md-8 div.counter span {
+  color: green;
+}
+html body div.container div#two.col-md-4 {
+  float: left;
+}

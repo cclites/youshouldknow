@@ -31,6 +31,9 @@
 			
 			$this->votes = $votes->objects;
 			$this->gt = $gt;
+			
+			//print_r($votes);
+			//die();
         }
 		
 		function init(){
@@ -146,7 +149,7 @@
 				 * 
 				 */
 				 
-				$devLink = "http:/216.16.7.62/vote/" . $v->id;
+				$devLink = "http://216.16.7.62/vote/" . $v->id;
 				//echo $devLink;
 				$link = $devLink;
 				 
@@ -186,7 +189,7 @@
 				if($billId != "0" ){
 					$myFile = app_path(). "/views/assets/data/bill/$billId.json";		
 					File::put($myFile, json_encode($bill));	
-					$billCOunt += 1;
+					$billCount += 1;
 				}
 				
 			}else{

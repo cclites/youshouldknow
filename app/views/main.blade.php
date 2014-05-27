@@ -23,6 +23,8 @@
 		     
         @elseif( $isAdmin )
             @include('admin/update')
+        @else
+          <!-- Load static main page -->    
         @endif
         
 		@include('helpers/jsIncludes')

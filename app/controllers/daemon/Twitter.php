@@ -18,9 +18,6 @@
 		
 		function getConnection($token, $secret){
 			
-			//require_once(public_path() . "/packages/twitteroauth/twitteroauth/TwitterOAuth.php");
-			//require_once(public_path() . "/packages/twitteroauth/twitteroauth/OAuth.php");
-			
 		    return new TwitterOAuth($this->consumerKey, $this->consumerSecret, $token,
                               $secret);	
 		}
@@ -33,7 +30,7 @@
 			$callback = $connection->post('statuses/update', array('status' => $status) );
 			
 			//print_r($callback);
-			sleep(1);
+			sleep(1);  //Don't want to completely flood the network
 
 		}
     }

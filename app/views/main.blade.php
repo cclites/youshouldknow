@@ -12,7 +12,7 @@
 		
 		@include('header')
 		
-		@if( isset($result) )
+		@if( isset($result) && isset($vote) )
 		
             @include('voteBar/voteBar')
             
@@ -24,7 +24,8 @@
         @elseif( $isAdmin )
             @include('admin/update')
         @else
-          <!-- Load static main page -->    
+          <!-- Load static main page -->
+          @include('default/default')  
         @endif
         
 		@include('helpers/jsIncludes')

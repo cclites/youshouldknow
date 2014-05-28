@@ -12,10 +12,15 @@
 */
 
 //Leave the default
+
+/*
 Route::get('/', function(){
 	return View::make('hello');
 });
+ * 
+ */
 
+Route::get('/', 'ViewController@init');
 Route::get('dev', 'ViewController@init');
 Route::get('vote/{voteId}', 'ViewController@init');
 Route::get('admin/{adminId}', 'AdminController@init');

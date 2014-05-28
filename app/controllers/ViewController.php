@@ -40,7 +40,6 @@
 		
 		    $billId = getBillId($voteId);
 		
-		    $bill = null;
 		
 	 	    if($billId){
 			    $billUrl = app_path(). "/views/assets/data/bill/$billId.json";
@@ -68,6 +67,7 @@
 			$sponsorLink = $bill->sponsor_role->website;
 			$sponsorDescription = $bill->sponsor_role->description;
 	    }
+
 		
 		//Stuff it all in an array
 		$data = array('title'=>$title,
@@ -80,6 +80,7 @@
 					  'sponsorlink'=>$sponsorLink,
 					  'sponsordescription'=>$sponsorDescription,
 					  'bill'=>$bill,
+					  'vote'=>$vote,
 					  'isAdmin'=>false);
 		/*			  
 		echo "<pre>";

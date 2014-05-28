@@ -91,6 +91,7 @@ require app_path().'/controllers/daemon/Twitter.php';
 require app_path().'/controllers/shared/GovTrack.php';
 require app_path().'/controllers/shared/Db.php';
 require app_path().'/config/ysk.php';
+require app_path().'/config/system.php';
 /*
  * Helpers
  */

@@ -149,7 +149,7 @@
 				 * 
 				 */
 				 
-				$devLink = "http://216.16.7.62/vote/" . $v->id;
+				$devLink = HOST . "vote/" . $v->id;
 				//echo $devLink;
 				$link = $devLink;
 				 

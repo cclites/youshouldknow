@@ -139,8 +139,23 @@
 				$vote = $this->gt->getVoterVotes($v->id);
 			    $this->updateObjectTables($vote, $v->id, $bill, $billId);
 				
-				$devLink = HOST . "vote/" . $v->id;
+				
+				/*
+				 * TODO:
+				 * I need to create a link back to the server that includes
+				 * the voter_vote id.
+				 *
+				 * ie. $link = http://myhost.youshouldknow.us/v/" . $v->id;
+				 * 
+				 */
+				 
+				$devLink = "http://216.16.7.62/vote/" . $v->id;
+				//echo $devLink;
 				$link = $devLink;
+				 
+				//For now, use the link back to govTrack that is contained in the
+				//vote object.
+				//$link = $v->link;
 				 
 				$tf->updateStatus($vote, $link);
 				$updates += 1;

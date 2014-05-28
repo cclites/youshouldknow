@@ -9,7 +9,7 @@ var ysk = {
 			var url = $(this).data().bind;
 			
 			$(this).click(function(){
-			    location.href = url;
+			    window.open(url);
 		    });
 		});
 	}

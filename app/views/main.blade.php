@@ -6,6 +6,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC|Belgrano|Kameron' rel='stylesheet' type='text/css'>
 		
 		@include('helpers/cssIncludes')
+		@include('meta')
 		
 	</head>
 	<body>

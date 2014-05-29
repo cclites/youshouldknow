@@ -105,3 +105,7 @@ require app_path().'/controllers/UpdatesController.php';
  */
 require public_path().'/packages/twitteroauth/twitteroauth/OAuth.php';
 require public_path().'/packages/twitteroauth/twitteroauth/TwitterOAuth.php';
+/*
+ * Static View templates
+ */
+ require app_path(). '/views/contact/contact.php';

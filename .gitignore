@@ -45,3 +45,5 @@ app/views/assets/data/vote/114358.json
 app/views/assets/data/vote/114376.json
 app/config/ysk.php
 app/controllers/shared/testdb.php
+app/views/assets/data/bill/293743.json
+*.json

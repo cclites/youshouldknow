@@ -5,6 +5,6 @@
     	<br>
 	    Role: {{ $sponsordescription }}
 	    <br><br>
-	    <button type="button" data-bind="{{$sponsorlink}}" class="btn-lg">Website</button>
+	    <button type="button" data-bind='value:"{{$sponsorlink}}"' class="btn-lg">Website</button>
 	</article>
 </div>

@@ -31,15 +31,7 @@
         
         @include('footer/footer')
         
-        <div id="dialog" style="display:none;>
-        	<label for="Email">Email:</label>
-				<input type="text" name="Email" id="Email" />
-				  <br>
-				<label for="Message">Message:</label><br />
-				<textarea name="Message" rows="10" cols="25" id="Message"></textarea>
-			
-				<input type="submit" name="submit" value="Submit" class="submit-button" />
-        </div>
+        <div id="dialog" style="display:none;"></div> 
         
 		@include('helpers/jsIncludes')
 		
@@ -52,8 +44,17 @@
                         chosenStates: ko.observableArray()
                     };
                     
-                ko.applyBindings(Model);
-                
+                ko.applyBindings(Model);  
+			</script>
+		@else	
+			<script>
+				var Model = {
+					    contactEmail: ko.observable('mail@com'),
+	                    contactMessage: ko.observable('message')
+				   };
+				
+				ko.applyBindings(Model); 
+				
 			</script>
 		@endif
 		

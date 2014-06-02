@@ -96,6 +96,7 @@ require app_path().'/config/system.php';
  * Helpers
  */
 require app_path().'/controllers/helpers/voterVoteHelper.php';
+require app_path().'/controllers/helpers/ContactEmail.php';
 /*
  * Updates
  */
@@ -108,4 +109,4 @@ require public_path().'/packages/twitteroauth/twitteroauth/TwitterOAuth.php';
 /*
  * Static View templates
  */
- require app_path(). '/views/contact/contact.php';
+require app_path().'/views/contact/contact.php';

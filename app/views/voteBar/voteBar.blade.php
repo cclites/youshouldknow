@@ -7,5 +7,5 @@
         @include('voteBar/voteBarResult')
     </ul>
     
-    <button type="button" data-bind="{{$link}}" class="btn-lg">More info from GovTrack.us</button>
+    <button type="button" data-bind='value:"{{$link}}"' class="btn-lg">More info from GovTrack.us</button>
 </div>

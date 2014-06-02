@@ -11,7 +11,6 @@
 |
 */
 
-//Leave the default
 
 /*
 Route::get('/', function(){
@@ -24,12 +23,35 @@ Route::get('/', 'ViewController@init');
 Route::get('dev', 'ViewController@init');
 Route::get('vote/{voteId}', 'ViewController@init');
 Route::get('admin/{adminId}', 'AdminController@init');
-//Route::post('update/{params}','UpdatesController@init');
 
-Route::get('update/', function(){
+
+//If status updates are suddenly broken,
+//change 'post' back to 'get'. I changed
+//it to post on the fly, so change is untested.
+Route::post('update/', function(){
 	$data = Input::all();
 	$uc = new UpdatesController();
 	$uc->manualUpdate($data["chosenStates"], $data["status"]);
-});  
+});
+
+//Settings: create a new setting
+
+Route::post('contact/', function(){
+	
+	$data = Input::all();
+	
+	$toAddress = "usk_admin@sweeps-soft.com";
+    $subject = "Site Contact Message";
+	$returnAddress = $data["contactEmail"];
+	$message = $data["contactMessage"];
+
+    Log::info( 'Sending Contact.');
+    mail($toAddress, $subject, $message,"From: $returnAddress\n");
+	Log::info( 'Mail Sent.');
+	
+	foreach (getallheaders() as $name => $value) {
+        Log::info ("$name: $value<br>");
+    }
+});
 
 

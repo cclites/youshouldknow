@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table vote">
 	<tr>
 	    <th>Party</th>
 	    <th>Yea</th>
@@ -11,13 +11,13 @@
 	        <td>	
 	  	        {{ $r }}
 	  	    </td>
-	  	    <td>
+	  	    <td class="yea">
 	  	       {{ $v['Yea'] }}
 	  	    </td>
-	  	    <td>
+	  	    <td class="nay">
 	  	    	{{ $v['Nay'] }}
 	  	    </td>
-	  	    <td>
+	  	    <td class="nv">
 	  	    	{{ $v['Not Voting'] }}
 	  	    </td> 
 	    </tr>

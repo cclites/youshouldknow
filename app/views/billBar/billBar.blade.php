@@ -3,6 +3,6 @@
     <article >
 	    <span>{{ $currentstatus }}</span>
 	    <br><br>
-	    <button type="button" data-bind="{{$thomas}}" class="btn-lg">Bill Text</button>
+	    <button type="button" data-bind='value:"{{$thomas}}"' class="btn-lg">Bill Text</button>
     </article>
 </div>

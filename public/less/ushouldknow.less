@@ -60,7 +60,11 @@ html body div.voteBar ul table.table tbody tr{
     
 /*|||||||||||||||||||||||||||||||||||||||||||*/
 
-
+html body div.voteBar h3,
+html body div.bill h3,
+html body div.sponsor h3{
+  font-size: 1.8em;
+}
 
 /*|||||||||||||||||||||||||||||||||||||||||||*/
 
@@ -108,7 +112,7 @@ html body div.voteBar, html body div.sponsor{
 	margin-bottom: 12px;
 	padding-bottom: 12px;
 
-    text-shadow: 0px 2px 3px @billborder;
+    text-shadow: 0px 2px 3px #5C1C09;
 }
 
 
@@ -138,7 +142,7 @@ html body div.voteBar, html body div.sponsor{
       height: 35px;
       background-image: url(@blueflare);
       font-family: @playfair;
-      text-shadow: 0px 2px 3px #555;
+      text-shadow: 0px 2px 3px #380E02;
       padding-bottom: 35px;
     }
     
@@ -188,6 +192,10 @@ html body div.voteBar, html body div.sponsor{
 	text-shadow: 0px 2px 3px @voteTextShadow;
 }
 
+html body div.bill article button.btn-lg{
+  text-shadow: 0px 2px 3px @voteTextShadow;
+}
+
 html body div.main div.bill article button.btn-lg{
 	background-image: url(@orangeflare);
 }
@@ -215,10 +223,26 @@ html body div.voteSponsor{
 }
 
 
-html body div.main div.sponsor article{
-	font-size: .8em;
+html body div.sponsor article,
+{
+	font-size: 1.3em;
 }
 
+html body div.bill article{
+  font-size: 1.2em;  
+}
+
+html body div.voteBar ul{
+  font-size: 1.2em;
+}
+
+html body div.voteBar ul table.table tbody tr{
+  text-shadow: 0 2px 3px #FA744D;
+}
+
+html body footer.container span.col-md-6{
+  text-align: center;
+}
 /*|||||||||||||||||||||||||||||||||||||||||||*/
 
 html body div.container div#one.col-md-8 textarea{

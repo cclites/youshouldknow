@@ -1,3 +1,5 @@
+//var scrollDelta = 0;
+
 $(function(){
 	ysk.initButtons();
 	ysk.initContact();
@@ -6,17 +8,57 @@ $(function(){
 	var totals = ysk.calculateTableTotals();
 	ysk.appendVoteTotals(totals);
 	
+	/*
+	$(document).scroll(function() {
+      //alert($(document).scrollTop());
+      var top = $(document).scrollTop(),
+          delta = top - scrollDelta,
+          scrollSpeed = delta/2;
+          
+          //alert(scrollSpeed);
+          
+      //Need to get top of the background element.
+      var backgroundPos = $(".voteBar").css('backgroundPosition').split(" ");
+      var xPos = backgroundPos[0],
+          yPos = backgroundPos[1];
+          
+      console.log("XPos tuple = " + xPos);    
+          
+      //strip the % sign
+      xPos = xPos.replace("px", "");
+      xPos = xPos.replace("%", "");
+      
+      console.log("Clean xPos = " + xPos);
+      
+      console.log("Scroll speed is " + scrollSpeed);
+          
+      xPos = parseInt(xPos) + parseInt(scrollSpeed);    
+          
+      console.log("xPos total " + xPos);
+          
+      $(".voteBar").css({
+          'background-position': xPos + 'px 0'
+      });
+      
+      //subtrtract top from scroll state
+      //alert(delta);
+      scrollState = top;
+      
+    });
+    */
+	
 });
 
 var ysk = {
 	
 	initButtons: function(){
 		$("button").each(function(){
-			var url = $(this).data().bind,
-			    tuples = url.split(":");
+			//var url = $(this).data().bind,
+			var url = $(this).val();
+			    //tuples = url.split(":");
 			
 			$(this).click(function(){
-			    window.open(tuples[1]);
+			    window.open(url);
 		    });
 		});
 	},

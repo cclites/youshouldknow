@@ -47,3 +47,4 @@ app/config/ysk.php
 app/controllers/shared/testdb.php
 app/views/assets/data/bill/293743.json
 *.json
+public/images/blue_grunge.jpeg

@@ -22,8 +22,10 @@
 		 * Get vote information by id
 		 */
 		function getVoterVotes($id){
-			$url = "https://www.govtrack.us/api/v2/vote_voter?vote=$id";
+			
+			$url = "https://www.govtrack.us/api/v2/vote_voter?vote=$id&limit=500";
 			return json_decode(file_get_contents($url));
+			
 		}
 		
 		function getBill($billId){

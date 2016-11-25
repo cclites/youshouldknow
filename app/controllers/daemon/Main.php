@@ -64,7 +64,7 @@
 			$credentials = getUserCredentials();
 			
 			//create filter to limit accounts
-			Log::info( 'Get user credentials.');
+			Log::info( 'Use state filter.');
 			$states = $this->createStateFilter($credentials);
 			
 			//init the controllers
